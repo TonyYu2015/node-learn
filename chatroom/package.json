@@ -1,0 +1,10 @@
+{
+		"name": "charroom",
+		"version": "0.0.1",
+		"description": "Minimalist multiroom chat server",
+		"dependencies": {},
+		"devDependencies": {
+				"mime": "^2.3.1",
+				"socket.io": "^2.1.1"
+		}
+}
