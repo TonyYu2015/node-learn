@@ -7,7 +7,7 @@ var cache = {};
 
 function send404(res) {
 		res.writeHead(404, {'Content-Type': 'text/plain'});
-		res.write('Error 404: resource not fount');
+		res.write('Error 404: resource not found');
 		res.end();
 }
 
@@ -16,6 +16,7 @@ function sendFile(res, filePath, fileContents) {
 				200,
 				{'Content-Type': mime.getType(path.basename(filePath))}
 		);
+		console.log('===========', fileContents);
 		res.end(fileContents);
 }
 

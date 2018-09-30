@@ -4,6 +4,7 @@
 		"description": "Minimalist multiroom chat server",
 		"dependencies": {},
 		"devDependencies": {
+				"jquery": "^3.3.1",
 				"mime": "^2.3.1",
 				"socket.io": "^2.1.1"
 		}
