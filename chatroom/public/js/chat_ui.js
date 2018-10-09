@@ -1,4 +1,3 @@
-
 function divEscapedContentElelment(message) {
 		return $('<div></div>').text(message);
 }
@@ -51,14 +50,15 @@ $(document).ready(function() {
 
 		socket.on('rooms', function(rooms) {
 				$('#room-list').empty();
+				console.log('rooms in client', rooms);
 				for(var room in rooms) {
-						room = room.substring(1, room.length);
+						room = room.substring(0, room.length);
 						if(room !== ''){
 								$('#room-list').append(divEscapedContentElelment(room));
 						}
 				}
 				$('#room-list div').click(function(){
-						chatApp.processCommond('/join' + $(this).text());
+						chatApp.processCommand('/join ' + $(this).text());
 						$('#send-message').focus();
 				})
 		});

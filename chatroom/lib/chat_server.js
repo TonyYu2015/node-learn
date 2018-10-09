@@ -19,6 +19,7 @@ function assignGuestName(socket, guestNumber, nickNames, namesUsed) {
 function joinRoom(socket, room) {
 		socket.join(room);
 		currentRoom[socket.id] = room;
+		console.log('room', socket.id, room);
 		socket.broadcast.to(room).emit('message', {
 				text: nickNames[socket.id] + ' has joined ' + room + '.'
 		});
@@ -70,6 +71,7 @@ function handleNameChangeAttempts(socket, nickNames, namesUsed) {
 
 function handleMessageBroadcasting(socket) {
 		socket.on('message', function(message) {
+				console.log('==========>', message)
 				socket.broadcast.to(message.room).emit('message', {
 						text: nickNames[socket.id] + ': ' + message.text
 				})

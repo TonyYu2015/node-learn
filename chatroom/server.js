@@ -16,7 +16,6 @@ function sendFile(res, filePath, fileContents) {
 				200,
 				{'Content-Type': mime.getType(path.basename(filePath))}
 		);
-		console.log('===========', fileContents);
 		res.end(fileContents);
 }
 
