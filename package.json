@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "connect": "^3.6.6",
     "formidable": "^1.2.1",
     "mysql": "^2.16.0"
   }
