@@ -4,9 +4,9 @@ var mysql = require('mysql');
 
 var db = mysql.createConnection({
 	host: '127.0.0.1',
-	user: 'me',
-	password: '',
-	database: 'timetrack',
+	user: 'root',
+	password: '123',
+  database: 'timetrack',
 	port: '3306'
 });
 
@@ -46,8 +46,8 @@ var server = http.createServer(function(req, res) {
 })
 
 db.query(
-	"CREATE TABLE IF NOT EXISTS word ("
-	+ "id INT(10) NOT FULL AUTO_INCREMENT, "
+	"CREATE TABLE IF NOT EXISTS work ("
+	+ "id INT(10) NOT NULL AUTO_INCREMENT, "
 	+ "hours DECIMAL(5,2) DEFAULT 0, "
 	+ "date DATE, "
 	+ "archived INT(1) DEFAULT 0, "
